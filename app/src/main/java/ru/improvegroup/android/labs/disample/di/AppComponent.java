@@ -1,15 +1,16 @@
 package ru.improvegroup.android.labs.disample.di;
 
 import dagger.Component;
-import ru.improvegroup.android.labs.disample.profile.presentation.LoginActivity;
+import ru.improvegroup.android.labs.disample.profile.presentation.ComicActivity;
 
 
 @Component(
         modules = {
-                LoginModule.class
+                ApiModule.class,
+                AnalyticsModule.class
         }
 )
 public interface AppComponent {
 
-    void inject(LoginActivity loginActivity);
+    void inject(ComicActivity loginActivity);
 }

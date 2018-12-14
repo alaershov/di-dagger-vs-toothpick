@@ -6,19 +6,11 @@ import dagger.Provides;
 import retrofit2.Retrofit;
 import ru.improvegroup.android.labs.disample.analytics.AnalyticsTracker;
 import ru.improvegroup.android.labs.disample.analytics.FirebaseAnalyticsTracker;
-import ru.improvegroup.android.labs.disample.LoginApi;
+import ru.improvegroup.android.labs.disample.profile.data.XkcdApi;
 
 
 @Module
-public abstract class LoginModule {
-
-    @Provides
-    public static LoginApi provideLoginApi() {
-        return new Retrofit.Builder()
-                .baseUrl("http://www.example.com")
-                .build()
-                .create(LoginApi.class);
-    }
+public abstract class AnalyticsModule {
 
     @Binds
     public abstract AnalyticsTracker provideAnalyticsTracker(
