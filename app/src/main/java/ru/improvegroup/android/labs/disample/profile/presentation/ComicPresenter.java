@@ -41,6 +41,8 @@ public final class ComicPresenter extends MvpPresenter<ComicView> {
         comicInteractor.getRandomComic()
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(compositeDisposable::add)
+                .doOnSubscribe(disposable -> getViewState().showProgress(true))
+                .doAfterTerminate(() -> getViewState().showProgress(false))
                 .subscribe(
                         comic -> {
                             getViewState().showComic(comic);
@@ -57,6 +59,8 @@ public final class ComicPresenter extends MvpPresenter<ComicView> {
         comicInteractor.getLatestComic()
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnSubscribe(compositeDisposable::add)
+                .doOnSubscribe(disposable -> getViewState().showProgress(true))
+                .doAfterTerminate(() -> getViewState().showProgress(false))
                 .subscribe(
                         comic -> {
                             getViewState().showComic(comic);
@@ -70,5 +74,10 @@ public final class ComicPresenter extends MvpPresenter<ComicView> {
 
     private void handleError(Throwable throwable) {
         Timber.w(throwable);
+        String localizedMessage = throwable.getLocalizedMessage();
+        if (localizedMessage == null) {
+            localizedMessage = "Unknown error";
+        }
+        getViewState().showError(localizedMessage);
     }
 }
