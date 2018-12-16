@@ -24,14 +24,15 @@ import ru.improvegroup.android.labs.disample.profile.domain.model.Comic;
 
 public final class ComicActivity extends MvpAppCompatActivity implements ComicView {
 
-    @InjectPresenter
-    ComicPresenter presenter;
-    @Inject
-    Provider<ComicPresenter> presenterProvider;
     private ProgressBar progressBar;
     private TextView titleTextView;
     private ImageView comicImageView;
     private TextView commentTextView;
+
+    @InjectPresenter
+    ComicPresenter presenter;
+    @Inject
+    Provider<ComicPresenter> presenterProvider;
 
     @ProvidePresenter
     ComicPresenter comicPresenter() {
