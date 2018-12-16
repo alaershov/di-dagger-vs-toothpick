@@ -5,6 +5,7 @@ import com.arellomobile.mvp.MvpView;
 import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;
 import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
+
 import ru.improvegroup.android.labs.disample.profile.domain.model.Comic;
 
 
@@ -17,4 +18,6 @@ public interface ComicView extends MvpView {
 
     @StateStrategyType(OneExecutionStateStrategy.class)
     void showError(String message);
+
+    void enableButtons(boolean previousEnabled, boolean nextEnabled);
 }

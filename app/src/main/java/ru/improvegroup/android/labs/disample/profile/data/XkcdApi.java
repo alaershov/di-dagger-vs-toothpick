@@ -2,7 +2,7 @@ package ru.improvegroup.android.labs.disample.profile.data;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
+import retrofit2.http.Path;
 
 public interface XkcdApi {
 
@@ -10,5 +10,5 @@ public interface XkcdApi {
     Single<ComicApiModel> getLatestComic();
 
     @GET("{number}/info.0.json")
-    Single<ComicApiModel> getComicByNumber(@Query("number") int number);
+    Single<ComicApiModel> getComicByNumber(@Path("number") int number);
 }

@@ -33,7 +33,7 @@ public final class ComicInteractor {
                 .flatMap(this::getComicByNumber);
     }
 
-    private Single<Comic> getComicByNumber(int number) {
+    public Single<Comic> getComicByNumber(int number) {
         return api.getComicByNumber(number)
                 .map(this::mapComicApiModel);
     }
