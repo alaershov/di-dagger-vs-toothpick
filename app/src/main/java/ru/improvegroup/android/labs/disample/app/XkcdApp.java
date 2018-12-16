@@ -1,4 +1,4 @@
-package ru.improvegroup.android.labs.disample;
+package ru.improvegroup.android.labs.disample.app;
 
 import android.app.Application;
 
