@@ -1,4 +1,4 @@
-package ru.improvegroup.android.labs.disample.profile.data;
+package ru.improvegroup.android.labs.disample.comic.data;
 
 import io.reactivex.Single;
 import retrofit2.http.GET;

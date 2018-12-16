@@ -12,7 +12,7 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".profile.presentation.ComicActivity">
+        <activity android:name=".comic.presentation.ComicActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -1,4 +1,4 @@
-package ru.improvegroup.android.labs.disample.profile.data;
+package ru.improvegroup.android.labs.disample.comic.data;
 
 import com.google.gson.annotations.SerializedName;
 

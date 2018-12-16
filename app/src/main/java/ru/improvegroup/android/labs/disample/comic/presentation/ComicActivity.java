@@ -1,4 +1,4 @@
-package ru.improvegroup.android.labs.disample.profile.presentation;
+package ru.improvegroup.android.labs.disample.comic.presentation;
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,9 +18,8 @@ import javax.inject.Provider;
 import androidx.annotation.Nullable;
 import ru.improvegroup.android.labs.disample.R;
 import ru.improvegroup.android.labs.disample.app.GlideApp;
-import ru.improvegroup.android.labs.disample.di.AppComponent;
-import ru.improvegroup.android.labs.disample.di.DaggerAppComponent;
-import ru.improvegroup.android.labs.disample.profile.domain.model.Comic;
+import ru.improvegroup.android.labs.disample.comic.domain.model.Comic;
+import ru.improvegroup.android.labs.disample.di.AppDi;
 
 
 public final class ComicActivity extends MvpAppCompatActivity implements ComicView {
@@ -55,9 +54,20 @@ public final class ComicActivity extends MvpAppCompatActivity implements ComicVi
         initButtons();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (isFinishing()) {
+            closeScope();
+        }
+    }
+
     private void inject() {
-        AppComponent appComponent = DaggerAppComponent.create();
-        appComponent.inject(this);
+        AppDi.INSTANCE.inject(this);
+    }
+
+    private void closeScope() {
+        AppDi.INSTANCE.closeComicActivityScope();
     }
 
     private void findViews() {

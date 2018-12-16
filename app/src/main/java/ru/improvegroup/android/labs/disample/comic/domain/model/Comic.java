@@ -1,4 +1,4 @@
-package ru.improvegroup.android.labs.disample.profile.domain.model;
+package ru.improvegroup.android.labs.disample.comic.domain.model;
 
 public final class Comic {
 

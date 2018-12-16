@@ -1,4 +1,4 @@
-package ru.improvegroup.android.labs.disample.profile.domain.usecase;
+package ru.improvegroup.android.labs.disample.comic.domain.usecase;
 
 
 import java.util.Random;
@@ -6,9 +6,9 @@ import java.util.Random;
 import javax.inject.Inject;
 
 import io.reactivex.Single;
-import ru.improvegroup.android.labs.disample.profile.data.ComicApiModel;
-import ru.improvegroup.android.labs.disample.profile.data.XkcdApi;
-import ru.improvegroup.android.labs.disample.profile.domain.model.Comic;
+import ru.improvegroup.android.labs.disample.comic.data.ComicApiModel;
+import ru.improvegroup.android.labs.disample.comic.data.XkcdApi;
+import ru.improvegroup.android.labs.disample.comic.domain.model.Comic;
 
 
 public final class ComicInteractor {

@@ -1,4 +1,4 @@
-package ru.improvegroup.android.labs.disample.profile.presentation;
+package ru.improvegroup.android.labs.disample.comic.presentation;
 
 
 import com.arellomobile.mvp.MvpView;
@@ -6,7 +6,7 @@ import com.arellomobile.mvp.viewstate.strategy.AddToEndSingleStrategy;
 import com.arellomobile.mvp.viewstate.strategy.OneExecutionStateStrategy;
 import com.arellomobile.mvp.viewstate.strategy.StateStrategyType;
 
-import ru.improvegroup.android.labs.disample.profile.domain.model.Comic;
+import ru.improvegroup.android.labs.disample.comic.domain.model.Comic;
 
 
 @StateStrategyType(AddToEndSingleStrategy.class)

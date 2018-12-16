@@ -1,4 +1,4 @@
-package ru.improvegroup.android.labs.disample.di;
+package ru.improvegroup.android.labs.disample.di.dagger.app;
 
 import dagger.Module;
 import dagger.Provides;
@@ -8,7 +8,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import ru.improvegroup.android.labs.disample.profile.data.XkcdApi;
+import ru.improvegroup.android.labs.disample.comic.data.XkcdApi;
 
 
 @Module

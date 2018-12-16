@@ -1,4 +1,4 @@
-package ru.improvegroup.android.labs.disample.profile.presentation;
+package ru.improvegroup.android.labs.disample.comic.presentation;
 
 import android.annotation.SuppressLint;
 
@@ -11,8 +11,8 @@ import androidx.annotation.Nullable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import ru.improvegroup.android.labs.disample.analytics.AnalyticsTracker;
-import ru.improvegroup.android.labs.disample.profile.domain.model.Comic;
-import ru.improvegroup.android.labs.disample.profile.domain.usecase.ComicInteractor;
+import ru.improvegroup.android.labs.disample.comic.domain.model.Comic;
+import ru.improvegroup.android.labs.disample.comic.domain.usecase.ComicInteractor;
 import timber.log.Timber;
 
 
