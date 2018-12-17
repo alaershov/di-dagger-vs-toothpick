@@ -20,7 +20,6 @@ import ru.improvegroup.android.labs.disample.R;
 import ru.improvegroup.android.labs.disample.app.GlideApp;
 import ru.improvegroup.android.labs.disample.comic.domain.model.Comic;
 import ru.improvegroup.android.labs.disample.di.AppDi;
-import timber.log.Timber;
 
 
 public final class ComicActivity extends MvpAppCompatActivity implements ComicView {
@@ -91,7 +90,7 @@ public final class ComicActivity extends MvpAppCompatActivity implements ComicVi
 
     @Override
     public void showComic(Comic comic) {
-        titleTextView.setText(comic.getTitle());
+        titleTextView.setText(getString(R.string.comic_title, comic.getNumber(), comic.getTitle()));
 
         GlideApp.with(this)
                 .load(comic.getImageUrl())
