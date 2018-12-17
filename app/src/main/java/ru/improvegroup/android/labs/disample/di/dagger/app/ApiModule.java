@@ -1,5 +1,7 @@
 package ru.improvegroup.android.labs.disample.di.dagger.app;
 
+import javax.inject.Singleton;
+
 import dagger.Module;
 import dagger.Provides;
 import io.reactivex.schedulers.Schedulers;
@@ -17,6 +19,7 @@ public class ApiModule {
     private static final String BASE_URL = "https://xkcd.com/";
 
     @Provides
+    @Singleton
     public XkcdApi provideLoginApi(OkHttpClient client) {
         return new Retrofit.Builder()
                 .client(client)
@@ -28,6 +31,7 @@ public class ApiModule {
     }
 
     @Provides
+    @Singleton
     public OkHttpClient provideOkHttpClient() {
         HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
