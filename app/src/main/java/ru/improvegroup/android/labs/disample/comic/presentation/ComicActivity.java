@@ -7,7 +7,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
 import com.arellomobile.mvp.presenter.ProvidePresenter;
 import com.google.android.material.snackbar.Snackbar;
@@ -20,6 +19,7 @@ import ru.improvegroup.android.labs.disample.R;
 import ru.improvegroup.android.labs.disample.app.GlideApp;
 import ru.improvegroup.android.labs.disample.comic.domain.model.Comic;
 import ru.improvegroup.android.labs.disample.di.AppDi;
+import ru.improvegroup.android.labs.disample.mvp.MvpAppCompatActivity;
 
 
 public final class ComicActivity extends MvpAppCompatActivity implements ComicView {
