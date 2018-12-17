@@ -32,6 +32,10 @@ public final class ComicActivity extends MvpAppCompatActivity implements ComicVi
 
     private Button previousButton;
     private Button nextButton;
+
+    private Button firstButton;
+    private Button latestButton;
+
     private Button randomButton;
 
     @InjectPresenter
@@ -79,12 +83,20 @@ public final class ComicActivity extends MvpAppCompatActivity implements ComicVi
 
         previousButton = findViewById(R.id.button_previous);
         nextButton = findViewById(R.id.button_next);
+
+        firstButton = findViewById(R.id.button_first);
+        latestButton = findViewById(R.id.button_latest);
+
         randomButton = findViewById(R.id.button_random);
     }
 
     private void initButtons() {
         previousButton.setOnClickListener(v -> presenter.onPreviousClicked());
         nextButton.setOnClickListener(v -> presenter.onNextClicked());
+
+        firstButton.setOnClickListener(v -> presenter.onFirstClicked());
+        latestButton.setOnClickListener(v -> presenter.onLatestClicked());
+
         randomButton.setOnClickListener(v -> presenter.onRandomClicked());
     }
 
@@ -106,14 +118,23 @@ public final class ComicActivity extends MvpAppCompatActivity implements ComicVi
     }
 
     @Override
-    public void showError(String message) {
-        Snackbar.make(progressBar, message, Snackbar.LENGTH_SHORT).show();
+    public void enableButtons(
+            boolean previousEnabled,
+            boolean nextEnabled,
+            boolean firstEnabled,
+            boolean latestEnabled,
+            boolean randomEnabled) {
+        previousButton.setEnabled(previousEnabled);
+        nextButton.setEnabled(nextEnabled);
+
+        firstButton.setEnabled(firstEnabled);
+        latestButton.setEnabled(latestEnabled);
+
+        randomButton.setEnabled(randomEnabled);
     }
 
     @Override
-    public void enableButtons(boolean previousEnabled, boolean nextEnabled, boolean randomEnabled) {
-        previousButton.setEnabled(previousEnabled);
-        nextButton.setEnabled(nextEnabled);
-        randomButton.setEnabled(randomEnabled);
+    public void showError(String message) {
+        Snackbar.make(progressBar, message, Snackbar.LENGTH_SHORT).show();
     }
 }

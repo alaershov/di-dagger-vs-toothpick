@@ -59,6 +59,22 @@ public final class ComicPresenter extends MvpPresenter<ComicView> {
         loadComicByNumber(comic.getNumber() + 1);
     }
 
+    public void onFirstClicked() {
+        if (comic == null) {
+            return;
+        }
+
+        loadComicByNumber(1);
+    }
+
+    public void onLatestClicked() {
+        if (comic == null) {
+            return;
+        }
+
+        loadLatestComic();
+    }
+
     @SuppressLint("CheckResult")
     public void onRandomClicked() {
         comicInteractor.getRandomComic()
@@ -127,6 +143,8 @@ public final class ComicPresenter extends MvpPresenter<ComicView> {
     private void refreshButtons(boolean inProgress) {
         boolean previousEnabled = false;
         boolean nextEnabled = false;
+        boolean firstEnabled = false;
+        boolean latestEnabled = false;
         boolean randomEnabled = false;
 
         if (comic != null && latestComic != null) {
@@ -134,10 +152,14 @@ public final class ComicPresenter extends MvpPresenter<ComicView> {
                     && comic.getNumber() > 1;
             nextEnabled = !inProgress
                     && comic.getNumber() < latestComic.getNumber();
+
+            firstEnabled = !inProgress;
+            latestEnabled = !inProgress;
+
             randomEnabled = !inProgress;
         }
 
-        getViewState().enableButtons(previousEnabled, nextEnabled, randomEnabled);
+        getViewState().enableButtons(previousEnabled, nextEnabled, firstEnabled, latestEnabled, randomEnabled);
     }
 
     private void handleError(Throwable throwable) {

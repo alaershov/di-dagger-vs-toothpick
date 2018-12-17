@@ -16,8 +16,13 @@ public interface ComicView extends MvpView {
 
     void showProgress(boolean inProgress);
 
+    void enableButtons(
+            boolean previousEnabled,
+            boolean nextEnabled,
+            boolean firstEnabled,
+            boolean latestEnabled,
+            boolean randomEnabled);
+
     @StateStrategyType(OneExecutionStateStrategy.class)
     void showError(String message);
-
-    void enableButtons(boolean previousEnabled, boolean nextEnabled, boolean randomEnabled);
 }
