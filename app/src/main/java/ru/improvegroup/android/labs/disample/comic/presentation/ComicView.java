@@ -19,5 +19,5 @@ public interface ComicView extends MvpView {
     @StateStrategyType(OneExecutionStateStrategy.class)
     void showError(String message);
 
-    void enableButtons(boolean previousEnabled, boolean nextEnabled);
+    void enableButtons(boolean previousEnabled, boolean nextEnabled, boolean randomEnabled);
 }

@@ -20,6 +20,7 @@ import ru.improvegroup.android.labs.disample.R;
 import ru.improvegroup.android.labs.disample.app.GlideApp;
 import ru.improvegroup.android.labs.disample.comic.domain.model.Comic;
 import ru.improvegroup.android.labs.disample.di.AppDi;
+import timber.log.Timber;
 
 
 public final class ComicActivity extends MvpAppCompatActivity implements ComicView {
@@ -103,9 +104,6 @@ public final class ComicActivity extends MvpAppCompatActivity implements ComicVi
     @Override
     public void showProgress(boolean inProgress) {
         progressBar.setVisibility(inProgress ? View.VISIBLE : View.GONE);
-        previousButton.setEnabled(!inProgress);
-        nextButton.setEnabled(!inProgress);
-        randomButton.setEnabled(!inProgress);
     }
 
     @Override
@@ -114,8 +112,9 @@ public final class ComicActivity extends MvpAppCompatActivity implements ComicVi
     }
 
     @Override
-    public void enableButtons(boolean previousEnabled, boolean nextEnabled) {
+    public void enableButtons(boolean previousEnabled, boolean nextEnabled, boolean randomEnabled) {
         previousButton.setEnabled(previousEnabled);
         nextButton.setEnabled(nextEnabled);
+        randomButton.setEnabled(randomEnabled);
     }
 }

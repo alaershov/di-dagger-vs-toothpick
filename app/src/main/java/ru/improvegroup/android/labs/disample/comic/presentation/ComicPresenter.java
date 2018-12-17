@@ -116,7 +116,7 @@ public final class ComicPresenter extends MvpPresenter<ComicView> {
 
     private void showProgress(boolean inProgress) {
         getViewState().showProgress(inProgress);
-        refreshButtons(comic);
+        refreshButtons(inProgress);
     }
 
     private void showComic(Comic comic) {
@@ -124,13 +124,20 @@ public final class ComicPresenter extends MvpPresenter<ComicView> {
         getViewState().showComic(comic);
     }
 
-    private void refreshButtons(Comic comic) {
-        if (latestComic == null || comic == null) {
-            return;
+    private void refreshButtons(boolean inProgress) {
+        boolean previousEnabled = false;
+        boolean nextEnabled = false;
+        boolean randomEnabled = false;
+
+        if (comic != null && latestComic != null) {
+            previousEnabled = !inProgress
+                    && comic.getNumber() > 1;
+            nextEnabled = !inProgress
+                    && comic.getNumber() < latestComic.getNumber();
+            randomEnabled = !inProgress;
         }
-        getViewState().enableButtons(
-                comic.getNumber() > 1,
-                comic.getNumber() < latestComic.getNumber());
+
+        getViewState().enableButtons(previousEnabled, nextEnabled, randomEnabled);
     }
 
     private void handleError(Throwable throwable) {
