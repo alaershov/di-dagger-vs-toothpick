@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">DI sample</string>
+    <string name="app_name">XKCD comics</string>
+
+    <string name="comic_button_previous">Previous</string>
+    <string name="comic_button_random">Random</string>
+    <string name="comic_button_next">Next</string>
+    <string name="comic_button_first">First</string>
+    <string name="comic_button_latest">Latest</string>
+
+    <string name="comic_title">#%1$d: %2$s</string>
 </resources>

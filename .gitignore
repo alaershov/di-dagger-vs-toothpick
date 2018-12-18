@@ -61,8 +61,3 @@ captures/
 # Other
 .DS_Store
 reports/
-/gradle.properties
-
-app/signing\.properties
-
-app/keystore\.jks
