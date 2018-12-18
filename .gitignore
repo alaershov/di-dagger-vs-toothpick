@@ -61,7 +61,3 @@ captures/
 # Other
 .DS_Store
 reports/
-
-app/signing\.properties
-
-app/keystore\.jks
