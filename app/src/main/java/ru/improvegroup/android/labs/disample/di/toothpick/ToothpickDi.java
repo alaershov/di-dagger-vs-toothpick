@@ -5,6 +5,7 @@ import ru.improvegroup.android.labs.disample.di.Di;
 import ru.improvegroup.android.labs.disample.di.toothpick.app.AnalyticsModule;
 import ru.improvegroup.android.labs.disample.di.toothpick.app.ApiModule;
 import ru.improvegroup.android.labs.disample.di.toothpick.app.Scopes;
+import ru.improvegroup.android.labs.disample.di.toothpick.comic.ComicActivityModule;
 import toothpick.Scope;
 import toothpick.Toothpick;
 
@@ -22,7 +23,8 @@ public final class ToothpickDi implements Di {
     @Override
     public void inject(ComicActivity comicActivity) {
         Scope comicScope = Toothpick.openScopes(Scopes.APP, Scopes.COMIC);
-        comicScope.installModules();
+        comicScope.installModules(
+                new ComicActivityModule());
 
         Toothpick.inject(comicActivity, comicScope);
     }
