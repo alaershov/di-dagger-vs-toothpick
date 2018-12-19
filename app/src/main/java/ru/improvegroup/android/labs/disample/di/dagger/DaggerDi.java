@@ -29,6 +29,7 @@ public final class DaggerDi implements Di {
         comicActivityComponent.inject(comicActivity);
     }
 
+    @Override
     public void closeComicActivityScope() {
         comicActivityComponent = null;
     }
